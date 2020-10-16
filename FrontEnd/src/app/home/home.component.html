@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-white">Gluky</a>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-search fa-lg"></i>
+        </div>
+      </div>
+      <select class="form-control" (change)="update()" [(ngModel)]="idUserPublishes" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let u of listUsers" [value]="u.id">{{u.fullName}} {{u.userName}}</option>
+      </select>
+    </div>
+  </div>
+  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+</nav>
+<div class="row">
+  <div style="margin: 50px;" *ngIf="userDetails">
+    <ul class="list-group">
+      <li class="list-group-item infoUser"><strong>Username : </strong>{{userDetails.userName}}</li>
+      <li class="list-group-item infoUser"><strong>FullName : </strong>{{userDetails.fullName}}</li>
+      <li class="list-group-item infoUser"><strong>PhoneNumber : </strong>{{userDetails.phoneNumber}}</li>
+      <li class="list-group-item infoUser"><strong>Email : </strong>{{userDetails.email}}</li>
+    </ul>
+  </div>
+  <div class="col-md-7">
+    <h1 class="display-4 text-center">{{text}}</h1>
+    <app-my-profile *ngIf="!panels" [userPublishes]="user" [guidUser]="idUser" (viewPanel)="parent($event)"></app-my-profile>
+    <app-comment *ngIf="panels" [idPublication]="idPublication" [guidUser]="idUser" (viewPanelP)="parent($event)"></app-comment>
+  </div>
+</div>

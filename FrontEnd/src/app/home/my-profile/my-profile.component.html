@@ -1,0 +1,38 @@
+<hr />
+<div class="boxForm">
+    <form #formulario="ngForm">
+        <div class="form-group">
+            <div class="input-group">
+                <textarea class="form-control" name="description" #description="ngModel"
+                    [(ngModel)]="publication.description" maxlength="5000"></textarea>
+            </div>
+        </div>
+        <input type="file" (change)="handleFileSelect($event)" />
+        <button id="post" class="btn btn-primary" (click)="add()">Post</button>
+        <button id="cancel" class="btn btn-warning" (click)="refreshList()">Cancel</button>
+        <img *ngIf="view" src="data:image/png;base64,{{base64textString}}">
+    </form>
+</div>
+<br />
+<table class="table table-hover">
+    <tr style="color: white;" *ngFor="let a of listPublication">
+        <td>{{a.description}}<img src="data:image/png;base64,{{a.image}}"></td>
+        <td>
+            <h2>Publishes</h2>
+            <h1 *ngIf="objectUsers[a.idUserPublishes]">{{objectUsers[a.idUserPublishes].userName}}</h1>  
+            {{a.date}}
+            <button *ngIf="!a.private && viewBoton" (click)="addPrivate(a)" style="margin: 10px;" class="btn btn-danger">
+                <i class="fas fa-window-close fa-lg"></i>
+            </button>
+            <button *ngIf="a.private && viewBoton" (click)="addPublic(a)" style="margin: 10px;" class="btn btn-success">
+                <i class="fas fa-check-square fa-lg"></i>
+            </button>
+            <button style="margin: 10px;" (click)="viewPanel.emit(a.id)" class="btn btn-primary">
+                <i class="fas fa-archive fa-lg"></i>
+            </button>
+            <button style="margin: 10px;" class="btn btn-light">
+                <i class="fas fa-ban fa-lg"></i>
+            </button>
+        </td>
+    </tr>
+</table>

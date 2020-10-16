@@ -1,0 +1,161 @@
+body{
+    background-color: #5882FA;;
+}
+
+h1{
+    color: #fff;
+}
+
+table{
+    background-color: #0e373a;
+}
+
+td{
+    text-align: center;
+}
+
+input.form-control,input.form-control:focus{
+    background-color: #535763;
+    color: #fff;
+    border: 1px solid #636b7b;
+}
+
+input.form-control:focus{
+    box-shadow: none;
+} 
+
+input.ng-touched.ng-invalid{
+    border: 2px solid #dc3545;
+}
+
+input.ng-valid{
+    border: 2px solid #28a745;
+}
+
+.green-icon{
+    color: #28a745;
+}
+.red-icon{
+    color: #dc3545;
+}
+
+button[type=submit].btn{
+    border-radius: 20px;
+    background-color: #04c582;
+    color: #fff;
+}
+
+input[type=file]{
+    border-radius: 20px;
+    background-color: #04c582;
+    padding: 10px;
+    margin-right: 100px;
+    margin-left: 25px;
+    color: #fff;
+}
+
+div.form-group label:not(.text-danger){
+    color: #545d6a;
+    font-weight: 700;
+}
+
+div.form-group.required>label:first-child:after{
+    content:'*';
+    color: #fff;
+    padding-left: 5px;
+}
+
+#toast-container > div {
+    opacity:1;
+}
+
+#post {
+    padding-left: 10;
+    padding-right: 10px;
+    font-size: large;
+}
+
+#cancel {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+    margin-left: 10px;
+    color: white;
+}
+
+.infoUser {
+    font-family: Arial, Helvetica, sans-serif;    
+    background-color: red;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.wrapped-div {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #2e3137;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+}
+
+  /* Tabs */
+.tab-header{
+    text-align: center;
+}
+
+.tab-header h2.active {
+    color: #fff;
+    border-bottom: 4px solid #fff;
+}
+
+.tab-header h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    display:inline-block;
+    padding: 30px 40px 10px 40px;
+    cursor: pointer;
+    color: #545d6a;
+    border-bottom: 2px solid #545d6a;
+}
+
+.tab-header h2:focus {
+      outline: none;
+}
+
+form{
+      margin: 0px 16px;
+}
+
+div.form-group input.invalid{
+    border: 1px solid #dc3545; 
+}
+
+div.form-group label:first-child{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.boxForm{
+    background-color: #576174;
+    padding: 30px;
+}
+
+img{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+

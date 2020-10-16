@@ -1,0 +1,28 @@
+<div style="float: right;margin-left: 10px; padding-bottom: 20px;">
+    <button class="btn btn-warning btn-lg" (click)="viewPanelP.emit(0)">
+        <i class="fas fa-arrow-circle-left fa-lg"></i> Go Back
+    </button>
+</div>
+<form #formulario="ngForm">
+    <div class="form-group">
+        <div class="input-group">
+            <input class="form-control" name="commentary" #description="ngModel"
+                [(ngModel)]="comment.commentary" maxlength="5000">
+        </div>
+    </div>
+    <button id="cancel" class="btn btn-primary" (click)="insertRecord()">Post</button>
+    <button id="cancel" class="btn btn-warning" (click)="insertRecord()">Cancel</button>
+</form>
+<table class="table table-hover">
+    <tr style="color: white;" *ngFor="let a of listComments">
+        <td>{{a.commentary}}</td>
+        <td>
+            <h2>Publishes</h2>
+            <h1 *ngIf="objectUsers[a.idUserPublishes]">{{objectUsers[a.idUserPublishes].userName}}</h1>  
+            {{a.date}}
+            <button *ngIf="!a.private && viewBoton" (click)="onDelete(a)" style="margin: 10px;" class="btn btn-danger">
+                <i class="fas fa-window-close fa-lg"></i>
+            </button>
+        </td>
+    </tr>
+</table>
